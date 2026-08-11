@@ -1,0 +1,107 @@
+<section class="courses-header">
+
+  <div>
+    <p class="eyebrow">ACADEMIC DASHBOARD</p>
+    <h2>My Courses</h2>
+    <p class="subtitle">
+      View your enrolled courses, credits and grades.
+    </p>
+  </div>
+
+  <div class="course-count">
+    <span>{{ filteredCourses.length }}</span>
+    <small>Courses</small>
+  </div>
+
+</section>
+
+<div class="search-box">
+
+  <span>🔍</span>
+
+  <input
+    type="text"
+    placeholder="Search courses..."
+    [(ngModel)]="searchText"
+  >
+
+</div>
+
+<div class="course-list">
+
+  @for (course of filteredCourses; track course.code) {
+
+    <app-course-card
+      [name]="course.name"
+      [code]="course.code"
+      [credits]="course.credits"
+      [grade]="course.grade">
+    </app-course-card>
+
+  }
+
+</div>
+
+@if (filteredCourses.length === 0) {
+
+  <div class="empty-state">
+    <div>📚</div>
+    <h3>No courses found</h3>
+    <p>Try searching with a different course name.</p>
+  </div>
+
+}
+
+<hr>
+
+<section class="api-section">
+
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">REST API</p>
+      <h2>API Integration</h2>
+      <p class="subtitle">
+        Fetch sample data from an external REST API.
+      </p>
+    </div>
+
+    <button (click)="loadApiData()">
+      🔄 Load API Data
+    </button>
+  </div>
+
+  @if (loading) {
+    <div class="loading">
+      Loading API data...
+    </div>
+  }
+
+  @if (errorMessage) {
+    <div class="error">
+      {{ errorMessage }}
+    </div>
+  }
+
+  @if (!loading && displayData.length > 0) {
+
+    <div class="api-grid">
+
+      @for (item of displayData; track item.id) {
+
+        <div class="api-item">
+
+          <div class="api-id">
+            #{{ item.id }}
+          </div>
+
+          <h3>{{ item.title }}</h3>
+
+        </div>
+
+      }
+
+    </div>
+
+  }
+
+</section>

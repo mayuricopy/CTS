@@ -1,0 +1,126 @@
+<section class="profile-page">
+
+  <div class="profile-header">
+    <div>
+      <p class="eyebrow">STUDENT ACCOUNT</p>
+      <h2>My Profile</h2>
+      <p class="subtitle">
+        Update your personal and academic information.
+      </p>
+    </div>
+
+    <div class="profile-icon">
+      👤
+    </div>
+  </div>
+
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="name">Full Name</label>
+
+      <input
+        id="name"
+        type="text"
+        placeholder="Enter your full name"
+        formControlName="name"
+      >
+
+      @if (profileForm.controls.name.touched &&
+           profileForm.controls.name.hasError('required')) {
+        <p class="error-message">
+          Name is required.
+        </p>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address</label>
+
+      <input
+        id="email"
+        type="email"
+        placeholder="Enter your email"
+        formControlName="email"
+      >
+
+      @if (profileForm.controls.email.touched &&
+           profileForm.controls.email.hasError('required')) {
+        <p class="error-message">
+          Email is required.
+        </p>
+      }
+
+      @if (profileForm.controls.email.touched &&
+           profileForm.controls.email.hasError('email')) {
+        <p class="error-message">
+          Please enter a valid email address.
+        </p>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="semester">Current Semester</label>
+
+      <input
+        id="semester"
+        type="number"
+        min="1"
+        max="8"
+        formControlName="semester"
+      >
+
+      @if (profileForm.controls.semester.touched &&
+           profileForm.controls.semester.invalid) {
+        <p class="error-message">
+          Semester must be between 1 and 8.
+        </p>
+      }
+    </div>
+
+    <button type="submit">
+      💾 Save Profile
+    </button>
+
+  </form>
+
+  @if (submitted) {
+
+    <div class="success-card">
+
+      <div class="success-icon">
+        ✓
+      </div>
+
+      <div>
+        <h3>Profile Saved Successfully!</h3>
+
+        <p>
+          Your student information has been updated.
+        </p>
+
+        <div class="profile-summary">
+
+          <span>
+            <strong>Name:</strong>
+            {{ profileForm.value.name }}
+          </span>
+
+          <span>
+            <strong>Email:</strong>
+            {{ profileForm.value.email }}
+          </span>
+
+          <span>
+            <strong>Semester:</strong>
+            {{ profileForm.value.semester }}
+          </span>
+
+        </div>
+      </div>
+
+    </div>
+
+  }
+
+</section>

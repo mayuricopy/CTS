@@ -1,0 +1,161 @@
+.courses-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.eyebrow {
+  color: #6366f1;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  margin: 0 0 6px;
+}
+
+h2 {
+  color: #1e1b4b;
+  font-size: 32px;
+  margin: 0;
+}
+
+.subtitle {
+  color: #64748b;
+  margin: 8px 0 0;
+}
+
+.course-count {
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  border-radius: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.25);
+}
+
+.course-count span {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.course-count small {
+  opacity: 0.9;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  max-width: 600px;
+  padding: 4px 16px;
+  border: 2px solid #e0e7ff;
+  border-radius: 14px;
+  box-shadow: 0 5px 20px rgba(79, 70, 229, 0.06);
+}
+
+.search-box input {
+  width: 100%;
+  padding: 13px 5px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
+
+.course-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+  margin-top: 25px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 50px;
+  background: white;
+  border-radius: 18px;
+  margin-top: 25px;
+}
+
+.empty-state div {
+  font-size: 45px;
+}
+
+.empty-state h3 {
+  color: #312e81;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e2e8f0;
+  margin: 45px 0;
+}
+
+.api-section {
+  padding-bottom: 30px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.section-heading button {
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.api-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.api-item {
+  background: white;
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid #e0e7ff;
+  box-shadow: 0 5px 15px rgba(15, 23, 42, 0.06);
+}
+
+.api-item h3 {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #334155;
+  text-transform: capitalize;
+}
+
+.api-id {
+  color: #6366f1;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.loading {
+  margin-top: 20px;
+  padding: 15px;
+  background: #eef2ff;
+  color: #4338ca;
+  border-radius: 10px;
+}
+
+.error {
+  margin-top: 20px;
+  padding: 15px;
+  background: #fef2f2;
+  color: #dc2626;
+  border-radius: 10px;
+}
