@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - Hands On 3</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- CSS Variables Ponyfill for older browser compatibility -->
+<script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2/dist/css-vars-ponyfill.min.js"></script>
+
+<script>
+    cssVars({
+        onlyLegacy: true
+    });
+</script>
+</head><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - Accessible Version</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Student Portal</h1>
+</header>
+
+<main>
+
+    <h2>Available Courses</h2>
+
+    <!-- Accessible search field -->
+    <label for="search-courses">Search courses</label>
+    <input
+        type="text"
+        id="search-courses"
+        placeholder="Search courses..."
+        aria-describedby="search-help"
+    >
+
+    <p id="search-help">
+        Enter a course name to filter the available courses.
+    </p>
+
+    <button
+        id="sort-btn"
+        type="button"
+        aria-label="Sort courses by credits"
+    >
+        Sort By Credits
+    </button>
+
+    <!-- Screen readers will be informed when the number of results changes -->
+    <p id="search-results" aria-live="polite"></p>
+
+    <section
+        class="course-grid"
+        aria-label="Available courses"
+    ></section>
+
+    <p
+        id="total-credits"
+        aria-live="polite"
+    ></p>
+
+    <!-- Selected course information is announced to screen readers -->
+    <div
+        id="selected-course"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+</main>
+
+<script type="module" src="app.js"></script>
+
+</body>
+</html>
+<body>
+
+<header>
+    <h1>Student Portal</h1>
+</header>
+
+<main>
+
+    <h2>Available Courses</h2>
+
+    <input
+        type="text"
+        id="search-courses"
+        placeholder="Search courses..."
+    >
+
+    <button id="sort-btn">
+        Sort By Credits
+    </button>
+
+    <div class="course-grid"></div>
+
+    <p id="total-credits"></p>
+
+    <div id="selected-course"></div>
+
+</main>
+
+<script type="module" src="app.js"></script>
+
+</body>
+</html>

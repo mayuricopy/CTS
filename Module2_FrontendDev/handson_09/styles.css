@@ -1,0 +1,83 @@
+/*
+HANDSON 09 - Accessibility Colour Contrast Check
+
+Before:
+Header background: #1f4e79
+Header text: #ffffff
+Main background: #f4f4f4
+Selected course text: #1f4e79
+
+After:
+No colour changes required.
+The existing colour combinations meet the required WCAG AA
+contrast levels for the text used in this application.
+*/
+
+:root {
+    --primary-color: #1f4e79;
+    --background-color: #f4f4f4;
+    --card-background: #ffffff;
+    --text-color: #000000;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+}
+
+header {
+    background: var(--primary-color);
+    color: var(--card-background);
+    padding: 20px;
+    text-align: center;
+}
+
+main{
+    width:90%;
+    max-width:1000px;
+    margin:auto;
+    padding:30px;
+}
+
+input{
+    padding:10px;
+    width:250px;
+}
+
+button{
+    padding:10px 20px;
+    margin-left:10px;
+    cursor:pointer;
+}
+
+.course-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.course-card {
+    background: var(--card-background);
+    padding:20px;
+    border-radius:8px;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+    cursor:pointer;
+}
+
+.course-card:hover{
+    transform:scale(1.03);
+}
+
+#selected-course {
+    margin-top: 25px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+#total-credits{
+    margin-top:20px;
+    font-weight:bold;
+}
